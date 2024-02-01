@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import ImagemDeFundo from '../imagens/fundo.jpg';
 import Titulo from '../componetes/Titulo/Titulo';
+import SobreMim from '../componetes/SobreMim/SobreMim';
 
 const AppContainer = styled.div`
 @media (max-width: 768px) {
@@ -17,6 +18,7 @@ function Inicio() {
   return (
     <AppContainer>
       <Titulo/>
+      <SobreMim/>
            
 
     </AppContainer>

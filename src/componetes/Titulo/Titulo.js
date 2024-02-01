@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import Perfil from '../../imagens/fotor-2024020116380.png';
 
 const flashingTitle = keyframes`
   0%, 50%, 100% {
@@ -18,10 +19,16 @@ const flashingSubtitle = keyframes`
   }
 `;
 
+const Centralizado = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`;
+
 const AppContainer = styled.div`
-  width: 100vw;
-  min-height: 100vh;
-  background-image: linear-gradient(90deg, #002f52 35%, #326589 165%);
+  background-image: linear-gradient(90deg, #000000 35%, #808080 165%);
 `;
 
 const ContentContainer = styled.div`
@@ -30,18 +37,16 @@ const ContentContainer = styled.div`
 `;
 
 const TituloTexto = styled.h2`
-  font-family: 'Permanent Marker', cursive;
-  font-size: 1.7rem;
-  display: flex;
+font-family: 'Playfair Display', serif;
+  font-size: 1rem;
   color: #fff;
   text-shadow: 0 0 10px ${({ theme }) => theme.mainColor};
   padding: 25px;
   letter-spacing: 2px;
-  animation: ${flashingTitle} 5s infinite alternate; /* Ajuste a duração conforme necessário */
+  animation: ${flashingTitle} 10s infinite alternate;
 
   @media (max-width: 900px) {
     font-size: 3rem;
-    text-align: center;
   }
 
   @media (max-width: 500px) {
@@ -50,30 +55,42 @@ const TituloTexto = styled.h2`
 `;
 
 const Subtitulo = styled.p`
-  font-family: 'Permanent Marker', cursive;
-  display: flex;
-  font-size: 1.7rem;
+font-family: 'Playfair Display', serif;
+  font-size: 1rem;
   color: #7FFF00;
   margin-top: 1rem;
   padding: 15px;
   letter-spacing: 2px;
-  animation: ${flashingSubtitle} 5s infinite alternate; /* Ajuste a duração conforme necessário */
-
+  animation: ${flashingSubtitle} 15s infinite alternate;
 
   @media (max-width: 500px) {
     font-size: 2rem;
-    text-align: center;
   }
+`;
+
+const Image = styled.img`
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: cover;
+  animation: ${flashingSubtitle} 25s infinite alternate;
+  &:hover {
+    animation: none;
+    
+    transition: background-color 0.3s ease;
 `;
 
 function Titulo() {
   return (
     <AppContainer>
       <ContentContainer>
-        <TituloTexto>
-          Cleber Delgado
-          <Subtitulo>Desenvolvedor Web</Subtitulo>
-        </TituloTexto>
+        <Centralizado>
+          <Image src={Perfil} alt="foto do Perfil" />
+          <TituloTexto>
+            Eu sou Cleber Delgado
+            <Subtitulo>Desenvolvedor Front End</Subtitulo>
+          </TituloTexto>
+        </Centralizado>
       </ContentContainer>
     </AppContainer>
   );

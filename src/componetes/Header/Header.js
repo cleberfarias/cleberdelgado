@@ -31,7 +31,7 @@ const rotateText = keyframes`
 `;
 
 const TituloPessoal = styled.p`
-    font-family: 'Permanent Marker', cursive;
+font-family: 'Playfair Display', serif;
     font-size: 16px;
     font-weight: bold;
     color: linear-gradient(90deg, #002f52 35%, #326589 165%);
@@ -52,10 +52,9 @@ const AudioCircuito = styled.audio`
 function Header() {
     return (
         <HeaderContainer>
-            <TituloPessoal>Cleber Delgado - Desenvolvedor Front end</TituloPessoal>
+            <TituloPessoal>Bem Vido ao meu site.</TituloPessoal>
             <AudioCircuito>
-                <source src={somCurtoCircuito} type="audio/mp3" />
-                Seu navegador não suporta o elemento de áudio.
+                
             </AudioCircuito>
             <OpcoesHeader />
         </HeaderContainer>

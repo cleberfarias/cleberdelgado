@@ -12,6 +12,7 @@ import Inicio from './rotas/Inicio';
 
 
 
+
 const GlobalStyle = createGlobalStyle`
 body {
   margin: 0 auto;
@@ -50,7 +51,7 @@ root.render(
     <GlobalStyle/>
     <Header/>
     <Inicio/>
-    
+       
   </React.StrictMode>
 );
 

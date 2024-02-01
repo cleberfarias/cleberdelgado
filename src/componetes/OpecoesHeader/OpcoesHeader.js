@@ -5,10 +5,15 @@ const Opcoes = styled.ul`
   display: flex;
   justify-content: center;
   text-align: center;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
 `;
 
 const Opcao = styled.li`
-  font-family: 'Permanent Marker', cursive;
+font-family: 'Playfair Display', serif;
   font-size: 16px;
   display: flex;
   justify-content: center;
@@ -19,6 +24,9 @@ const Opcao = styled.li`
   cursor: pointer;
   min-width: 120px;
   color: linear-gradient(90deg, #002f52 35%, #326589 165%);
+  &:hover {
+    color: #00ff00; /* Cor verde fluorescente ao passar o mouse */
+  }
 
   @media screen and (max-width: 768px) {
     padding: 8px;  /* Ajuste para telas menores */
