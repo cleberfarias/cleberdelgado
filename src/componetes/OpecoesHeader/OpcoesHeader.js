@@ -38,7 +38,7 @@ const TextoOpcao = styled.p`
   margin: 0;
 `;
 
-const textoOpcoes = ['Inicio', 'Sobre Mim', 'Expêriencias', 'Projeto', 'Certificações', 'Habilidades'];
+const textoOpcoes = ['Inicio', 'Sobre Mim', 'Expêriencias', 'Projeto', 'Repositórios', 'Habilidades'];
 
 
 function OpcoesHeader() {

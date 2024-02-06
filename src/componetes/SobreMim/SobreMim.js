@@ -1,35 +1,50 @@
 import styled from "styled-components";
 
 const HabilidadesContainer = styled.header`
-    width: 100vw;
-    min-height: 100vh;
-    padding: 0px;
-    background-image: linear-gradient(90deg, #000000 35%, #808080 165%);
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px; /* Adicionando padding igual nos lados */
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 0; /* Removendo o padding em telas menores */
+    }
 `;
 
 const TituloHabilidade = styled.div`
     font-family: 'Playfair Display', serif;
-    color: #22778b; 
-    font-size: 20px;
-    text-align: center;
-    margin: 0 auto;
-    background-image: linear-gradient(90deg, #000000 35%, #808080 165%);
-    
+    font-weight: 400;
+    background-image: linear-gradient(97.54deg, rgba(0, 47, 82, 0.9) 35.49%, rgba(50, 101, 137, 0.9) 165.37%);
+    color: #00ccff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px ${({ theme }) => theme.mainColor};
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
 
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
 `;
-const TextoPerfil = styled.p`
-    font-family: 'Playfair Display', serif;
-    color: #22778b; 
-    font-size: 15px;
-    display: flex;
-    
-    align-items: center;
-    justify-content: center;
-    text-align: justify;
-    padding: 0 20px;
-`
 
+const TextoPerfil = styled.p`
+    color: #f6f6f6; 
+    line-height: 1.5;
+    text-align: justify;
+    margin: 0; /* Removendo a margem padrão do parágrafo */
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+`;
 
 function SobreMim() {
     return (
@@ -44,10 +59,10 @@ function SobreMim() {
                 na área. Meu objetivo é contribuir de maneira significativa para projetos desafiadores, unindo meu conhecimento
                 técnico com a expertise em vendas, visando sempre alcançar resultados excepcionais. Sou um entusiasta dedicado
                 em acompanhar as novas tecnologias do mercado, buscando aprimorar meus conhecimentos diariamente. Sou comprometido
-                com a agilidade no desenvolvimento e me adapto facilmente a mudanças e desafios.</TextoPerfil>
-
+                com a agilidade no desenvolvimento e me adapto facilmente a mudanças e desafios.
+            </TextoPerfil>
         </HabilidadesContainer>
-
     )
 }
+
 export default SobreMim;

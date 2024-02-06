@@ -3,10 +3,7 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { createGlobalStyle } from 'styled-components';
 import Header from './componetes/Header/Header';
-import Footer from './componetes/Footer/Footer';
-
-
-import ImagemDeFundo from '../src/imagens/logo.jpg';
+import Fundo from './imagens/inovacao-e-tecnologia.jpg';
 import Inicio from './rotas/Inicio';
 
 
@@ -14,35 +11,48 @@ import Inicio from './rotas/Inicio';
 
 
 const GlobalStyle = createGlobalStyle`
-body {
-  margin: 0 auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-li {
-  list-style: none;
-}
-
-@media (max-width: 768px) {
   body {
-    font-size: 14px;
-    margin: 0 10px;
-  }
-  width: 100vw;
-  min-height: 100vh;
-  background: url(${ImagemDeFundo}) center;
-  background-size: cover;  
-}`
+    background-image: url(${Fundo});
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+    }
+  }
+
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+  li {
+    list-style: none;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+    }
+  }
+
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+`;
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -7,6 +7,12 @@ const LogoContainer = styled.div`
     display: flex;
     align-items: center;
     padding-right: 20px;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+      }
 `;
 
 const LogoImage = styled.img`

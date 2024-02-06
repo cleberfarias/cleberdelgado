@@ -1,7 +1,9 @@
 import styled from 'styled-components';
-import ImagemDeFundo from '../imagens/fundo.jpg';
 import Titulo from '../componetes/Titulo/Titulo';
 import SobreMim from '../componetes/SobreMim/SobreMim';
+import Experiencia from '../componetes/Experiencia/Experiencia';
+import Projetos from '../componetes/Projetos/Projetos';
+import Repositorios from '../componetes/Repositorios/Repositorios';
 
 const AppContainer = styled.div`
 @media (max-width: 768px) {
@@ -11,14 +13,22 @@ const AppContainer = styled.div`
   }
   width: 100vw;
   min-height: 100vh;
-  background: url(${ImagemDeFundo}) center;
-  background-size: cover;  
+  
+  background-size: cover; 
+   @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  } 
 }`
 function Inicio() {
   return (
     <AppContainer>
       <Titulo/>
       <SobreMim/>
+      <Experiencia/>
+      <Projetos/>
+      <Repositorios/>
            
 
     </AppContainer>
