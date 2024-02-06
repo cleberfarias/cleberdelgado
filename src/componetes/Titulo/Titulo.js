@@ -24,6 +24,7 @@ const AppContainer = styled.div`
   align-items: flex-start;
   padding: 20px;
   box-sizing: border-box;
+  overflow-x: hidden;
 
   @media (max-width: 768px) {
     flex-direction: column;

@@ -10,6 +10,8 @@ align-items: center;
 justify-content: center;
 text-align: center;
 padding: 0 20px; /* Adicionando padding igual nos lados */
+overflow-x: hidden;
+
 
 @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -30,6 +32,8 @@ const TituloProjetos = styled.h2`
   width: 100%;
   text-align: center;
   padding: 15px 0;
+  border: 1px solid #00ccff; /* Adicionando borda */
+  border-radius: 10px;
 
   @media screen and (max-width: 768px) {
     font-size: 20px;

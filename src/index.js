@@ -5,6 +5,7 @@ import { createGlobalStyle } from 'styled-components';
 import Header from './componetes/Header/Header';
 import Fundo from './imagens/inovacao-e-tecnologia.jpg';
 import Inicio from './rotas/Inicio';
+import Footer from './componetes/Footer/Footer';
 
 
 
@@ -12,7 +13,7 @@ import Inicio from './rotas/Inicio';
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background-image: url(${Fundo});
+    background: linear-gradient(90deg, #002f52 100%, #326589 500%);
     background-position: center;
     background-size: cover;
     width: 100vw;
@@ -23,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    
 
     @media screen and (max-width: 768px) {
       flex-direction: column;
@@ -61,6 +63,7 @@ root.render(
     <GlobalStyle/>
     <Header/>
     <Inicio/>
+    <Footer/>
        
   </React.StrictMode>
 );

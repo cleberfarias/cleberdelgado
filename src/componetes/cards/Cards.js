@@ -13,7 +13,8 @@ const CarrosselSection = styled.section`
   align-items: center;
   margin: 0 auto;
   height: auto;
-  max-width: 2100px;
+  max-width: 100%; /* Define uma largura máxima para o carrossel */
+  overflow-x: hidden; /* Impede que o carrossel ultrapasse a largura da página */
 `;
 
 const CarrosselContainer = styled.div`
@@ -54,7 +55,6 @@ const DescricaoContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  
 
   @media screen and (min-width: 768px) {
     text-align: left;
@@ -73,14 +73,20 @@ const BotoesAncora = styled.a`
   width: 150px;
   text-decoration: none;
   margin-top: 10px;
+  border: 1px solid #00ccff; /* Adicionando borda */
+  border-radius: 10px;
 
   &:hover {
     color: #00ff00; /* Cor verde fluorescente ao passar o mouse */
+  }
 `;
+
 const StyledSwiperSlide = styled(SwiperSlide)`
   img {
-    width: 100%;
-    height: 120%;
+    width: 80%;
+    height: auto;
+    max-width: 100%; /* Ajusta o tamanho da imagem proporcionalmente à largura do slide */
+    max-height: 100%; /* Ajusta o tamanho da imagem proporcionalmente à altura do slide */
     border-radius: 10px; /* Opcional: adicione border-radius às imagens */
   }
 `;
@@ -91,10 +97,15 @@ function Cards() {
       <CarrosselContainer className="carrossel__container">
         <Swiper
           spaceBetween={20} // Ajuste o espaço entre as imagens
-          slidesPerView={3} // Mostrar uma imagem por vez
+          slidesPerView={3} // Mostrar apenas um slide por vez em telas pequenas
           centeredSlides
           navigation
           pagination={{ clickable: true }}
+          breakpoints={{
+            768: {
+              slidesPerView: 3 // Mostrar três slides por vez em telas maiores que 768px
+            }
+          }}
         >
           <StyledSwiperSlide>
             <img src={EmBreve} alt="Projeto A Mais Indicada" />

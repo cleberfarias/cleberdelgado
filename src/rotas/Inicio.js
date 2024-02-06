@@ -29,6 +29,7 @@ function Inicio() {
       <Experiencia/>
       <Projetos/>
       <Repositorios/>
+      
            
 
     </AppContainer>

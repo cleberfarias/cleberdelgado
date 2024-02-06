@@ -4,20 +4,15 @@ import JavaScriptIcon from '../../imagens/javaScript.png';
 import ImagemReact from '../../imagens/react.png';
 
 const HabilidadesContainer = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding: 0 20px; /* Adicionando padding igual nos lados */
-
-@media screen and (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    padding: 0; /* Removendo o padding em telas menores */
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px; /* Adicionando padding igual nos lados */
+  overflow: hidden; /* Oculta o conteúdo que ultrapassa os limites da tela */
 `;
+
 const TituloHabilidade = styled.h2`
   font-family: 'Playfair Display', serif;
   font-weight: 400;
@@ -30,6 +25,8 @@ const TituloHabilidade = styled.h2`
   width: 100%;
   text-align: center;
   padding: 15px 0;
+  border: 1px solid #00ccff; /* Adicionando borda */
+  border-radius: 10px;
 
   @media (max-width: 768px) {
     font-size: 20px;
@@ -40,13 +37,14 @@ const ConteudoContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  
 `;
 
 const StyledParagraph = styled.p`
-  color: #f6f6f6; 
+  color: #f6f6f6;
   line-height: 1.5;
   text-align: justify;
-  margin-left: 20px; /* Ajuste a margem conforme necessário */
+  margin: 0 2px; /* Margem de 2px nos lados direito e esquerdo */
 `;
 
 const StyledList = styled.ul`
@@ -62,15 +60,15 @@ const StyledListItem = styled.li`
 `;
 
 const ToolIcon = styled.img`
-  width: 80px; /* Ajuste o tamanho conforme necessário */
-  height: 80px; /* Ajuste o tamanho conforme necessário */
-  margin-right: 20px; /* Ajuste a margem conforme necessário */
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
 `;
 
 const ReactImage = styled.img`
-  width: 80px; /* Ajuste o tamanho conforme necessário */
-  height: 80px; /* Ajuste o tamanho conforme necessário */
-  margin-right: 20px; /* Ajuste a margem conforme necessário */
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
 `;
 
 const TextWithToolIcon = ({ text, toolIcon }) => (

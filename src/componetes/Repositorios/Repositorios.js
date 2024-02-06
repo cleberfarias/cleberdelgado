@@ -8,6 +8,7 @@ align-items: center;
 justify-content: center;
 text-align: center;
 padding: 0 20px; /* Adicionando padding igual nos lados */
+overflow-x: hidden;
 
 @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -28,6 +29,8 @@ const TituloHabilidade = styled.div`
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   width: 100%;
   text-align: center;
+  border: 1px solid #00ccff; /* Adicionando borda */
+  border-radius: 10px;
 
   @media screen and (max-width: 768px) {
     font-size: 20px;
@@ -74,12 +77,21 @@ const LinhaDivisoria = styled.hr`
 `;
 
 const BotaoAcao = styled.button`
-  background-color: ${({ bgColor }) => bgColor || "#00ccff"};
+  background-image: linear-gradient(97.54deg, rgba(0, 47, 82, 0.9) 35.49%, rgba(50, 101, 137, 0.9) 165.37%);
+  font-size: 16px;
+  border-radius: 20px;
+  font-weight: 900;
   color: #fff;
   padding: 10px;
   border: none;
   cursor: pointer;
   margin-right: 10px;
+  border: 1px solid #00ccff; /* Adicionando borda */
+  border-radius: 10px;
+
+  &:hover {
+    color: #00ff00; /* Cor verde fluorescente ao passar o mouse */
+  }
 `;
 
 function Repositorios() {

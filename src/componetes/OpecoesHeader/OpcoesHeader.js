@@ -5,6 +5,7 @@ const Opcoes = styled.ul`
   display: flex;
   justify-content: center;
   text-align: center;
+  overflow-x: hidden;
   @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
