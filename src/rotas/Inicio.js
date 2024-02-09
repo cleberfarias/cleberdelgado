@@ -4,6 +4,8 @@ import SobreMim from '../componetes/SobreMim/SobreMim';
 import Experiencia from '../componetes/Experiencia/Experiencia';
 import Projetos from '../componetes/Projetos/Projetos';
 import Repositorios from '../componetes/Repositorios/Repositorios';
+import Habilidade from '../componetes/Habilidade/Habilidade';
+import Formulario from '../componetes/Formulário/Formulario';
 
 const AppContainer = styled.div`
 @media (max-width: 768px) {
@@ -29,6 +31,8 @@ function Inicio() {
       <Experiencia/>
       <Projetos/>
       <Repositorios/>
+      <Habilidade/>
+      <Formulario/>
       
            
 

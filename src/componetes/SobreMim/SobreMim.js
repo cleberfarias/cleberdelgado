@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const HabilidadesContainer = styled.div`
+const SobreMimContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +10,7 @@ const HabilidadesContainer = styled.div`
   overflow-x: hidden;
 `;
 
-const TituloHabilidade = styled.h2`
+const TituloSobreMim = styled.h2`
   font-family: 'Playfair Display', serif;
   font-weight: 400;
   background-image: linear-gradient(97.54deg, rgba(0, 47, 82, 0.9) 35.49%, rgba(50, 101, 137, 0.9) 165.37%);
@@ -36,12 +36,12 @@ const TextoPerfil = styled.p`
 
 function SobreMim() {
   return (
-    <HabilidadesContainer>
-      <TituloHabilidade>Sobre Mim</TituloHabilidade>
+    <SobreMimContainer>
+      <TituloSobreMim>Sobre Mim</TituloSobreMim>
       <TextoPerfil>
         Desenvolvedor Full Stack na empresa Mais Indicada, uma cachaçaria de Celso Ramos, Santa Catarina. Tenho mais de 5 anos de experiência em vendas de produtos e tecnologia, iniciei minha jornada no desenvolvimento web em 2023. Minhas principais competências são o domínio de Javascript, TypeScript, React, Styled-Components e NodeJS, que utilizo para criar aplicações web inovadoras, e a habilidade de compreender as necessidades dos clientes e traduzi-las em soluções tecnológicas eficientes. Além disso, sou capacitado em pré-vendas e vendas consultivas, tendo realizado diversos cursos e certificações na área. Meu objetivo é contribuir de maneira significativa para projetos desafiadores, unindo meu conhecimento técnico com a expertise em vendas, visando sempre alcançar resultados excepcionais. Sou um entusiasta dedicado em acompanhar as novas tecnologias do mercado, buscando aprimorar meus conhecimentos diariamente. Sou comprometido com a agilidade no desenvolvimento e me adapto facilmente a mudanças e desafios.
       </TextoPerfil>
-    </HabilidadesContainer>
+    </SobreMimContainer>
   );
 }
 
