@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const FormularioContainer = styled.div`
   display: flex;
@@ -30,55 +32,108 @@ const TituloFormulario = styled.h2`
   }
 `;
 
-const FormularioWrapper = styled.form`
+const Form = styled.form`
+  max-width: 600px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
-const FormularioInput = styled.input`
-  padding: 10px;
-  margin-bottom: 10px;
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
+const Input = styled.input`
+  margin-bottom: 14px;
+  height: 34px;
+  border-radius: 4px;
+  border: 0;
+  padding: 0 8px; 
 `;
 
-const FormularioTextarea = styled.textarea`
-  padding: 10px;
-  margin-bottom: 10px;
-  width: 300px;
-  height: 100px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
+const Textarea = styled.textarea`
+  margin-bottom: 14px;
+  border-radius: 4px;
+  border: 0;
+  padding: 8px; 
+  height: 94px;
+  resize: none;
 `;
 
-const FormularioButton = styled.button`
-  padding: 10px 20px;
-  background-color: #00ccff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
+const Button = styled.button`
+  height: 34px;
+  border-radius: 4px;
+  border: 0;
   cursor: pointer;
+  background-color: #0fdbff;
+  font-size: 18px;
+  transition: background-color, transform 0.8s;
 
   &:hover {
-    background-color: #0099cc;
+    background-color: #0fe3ff;
+    transform: scale(1.01);
   }
 `;
 
+const ErrorMessage = styled.p`
+  color: red;
+`;
+
 function Formulario() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  
+  function sendEmail(e){
+    e.preventDefault();
+
+    if (name === '' || email === '' || message === '') {
+      alert('Preencha todos os campos.');
+      return;
+    }
+
+    const templateParams = {
+      from_name: name,
+      message: message,
+      email: email
+    };
+
+    emailjs.send("service_ool1u8e", "template_wdrpdvu", templateParams, "3DYilfSm2gLZfdwYG")
+    .then((response) => {
+      alert("EMAIL ENVIADO", response.status, response.text);
+      setName('');
+      setEmail('');
+      setMessage('');
+      setErrorMessage(''); // Limpa a mensagem de erro se houver
+    })
+    .catch((err) => {
+      console.log("Erro: ", err);
+      setErrorMessage('Erro ao enviar o email. Tente novamente mais tarde.');
+    });
+  }
+
   return (
     <FormularioContainer>
-      <TituloFormulario>Entre em Contato</TituloFormulario>
-      <FormularioWrapper>
-        <FormularioInput type="text" placeholder="Nome" />
-        <FormularioInput type="email" placeholder="Email" />
-        <FormularioTextarea placeholder="Mensagem"></FormularioTextarea>
-        <FormularioButton type="submit">Enviar</FormularioButton>
-      </FormularioWrapper>
+      <TituloFormulario>Entre em Contato Comigo</TituloFormulario>
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+      <Form onSubmit={sendEmail}>
+        <Input
+          placeholder="Digite seu nome"
+          onChange={(e) => setName(e.target.value)}
+          value={name}
+        />
+
+        <Input 
+          placeholder="Digite seu email"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+        />
+
+        <Textarea
+          placeholder="Digite sua mensagem..."
+          onChange={(e) => setMessage(e.target.value)}
+          value={message}
+        />
+
+        <Button type="submit">Enviar</Button>
+      </Form>
     </FormularioContainer>
   );
 }

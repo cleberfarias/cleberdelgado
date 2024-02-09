@@ -2,20 +2,20 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const HabilidadesContainer = styled.header`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding: 0 20px; /* Adicionando padding igual nos lados */
-overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px; /* Adicionando padding igual nos lados */
+  overflow-x: hidden;
 
-@media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
     height: auto;
     padding: 0; /* Removendo o padding em telas menores */
-}
+  }
 `;
 
 const TituloHabilidade = styled.div`
@@ -44,6 +44,7 @@ const ListaRepositorios = styled.ul`
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0;
+  
 `;
 
 const RepositorioItem = styled.li`
@@ -51,11 +52,15 @@ const RepositorioItem = styled.li`
   margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 15px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.3); /* Adicionando 50% de transparência */;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* Adicionando 50% de transparência */;
+  }
 
   h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
+    text-transform: capitalize; /* Capitalizando todas as primeiras letras */
   }
 
   p {

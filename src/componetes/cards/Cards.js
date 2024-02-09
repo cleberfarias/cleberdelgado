@@ -124,7 +124,7 @@ function Cards() {
 
       <Card className="card">
         <DescricaoContainer>
-          <BotoesAncora href='/catálogo' className="botões__ancora">Saiba mais</BotoesAncora>
+          <BotoesAncora href='https://github.com/cleberfarias' target='_blanck' className="botões__ancora">Saiba mais</BotoesAncora>
         </DescricaoContainer>
       </Card>
     </CarrosselSection>

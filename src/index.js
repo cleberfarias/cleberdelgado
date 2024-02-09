@@ -1,15 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
-import Header from './componetes/Header/Header';
-import Fundo from './imagens/inovacao-e-tecnologia.jpg';
 import Inicio from './rotas/Inicio';
-import Footer from './componetes/Footer/Footer';
-
-
-
-
+import SobreMim from './componetes/SobreMim/SobreMim';
+import Experiencia from './componetes/Experiencia/Experiencia';
+import Projetos from './componetes/Projetos/Projetos';
+import Repositorios from './componetes/Repositorios/Repositorios';
+import Habilidade from './componetes/Habilidade/Habilidade';
+import Formulario from './componetes/Formulário/Formulario';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -24,15 +23,7 @@ const GlobalStyle = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    
-
-    @media screen and (max-width: 768px) {
-      flex-direction: column;
-      align-items: center;
-      height: auto;
-    }
   }
-
 
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -41,32 +32,25 @@ const GlobalStyle = createGlobalStyle`
 
   li {
     list-style: none;
-    @media screen and (max-width: 768px) {
-      flex-direction: column;
-      align-items: center;
-      height: auto;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-    height: auto;
   }
 `;
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>    
-    <GlobalStyle/>
-    <Header/>
-    <Inicio/>
-    <Footer/>
-       
-  </React.StrictMode>
+ReactDOM.render(
+  <React.StrictMode>
+    <Router>
+      <GlobalStyle />
+      <Inicio>
+        <Routes>
+          <Route path="/" element={<Inicio />} />
+          <Route path="/SobreMim" element={<SobreMim />} />
+          <Route path="/Experiencia" element={<Experiencia />} />
+          <Route path="/Projetos" element={<Projetos />} />
+          <Route path="/Repositorios" element={<Repositorios />} />
+          <Route path="/Habilidade" element={<Habilidade />} />
+          <Route path="/Formulário" element={<Formulario />} />
+        </Routes>
+      </Inicio>
+    </Router>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
-
-
-reportWebVitals();
