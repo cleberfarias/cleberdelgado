@@ -1,7 +1,8 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import React from "react";
-import JavaScriptIcon from '../../imagens/javaScript.png';
-import ImagemReact from '../../imagens/react.png';
+import JavaScriptIcon from '../../imagens/java.svg';
+import ImagemReact from '../../imagens/logo.svg';
+
 
 const HabilidadesContainer = styled.div`
   display: flex;
@@ -64,11 +65,19 @@ const ToolIcon = styled.img`
   height: 80px;
   margin-right: 20px;
 `;
+const spin = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
 
 const ReactImage = styled.img`
-  width: 80px;
-  height: 80px;
-  margin-right: 20px;
+  height: 20vmin;
+  pointer-events: none;
+  animation: ${spin} infinite 20s linear;
 `;
 
 const TextWithToolIcon = ({ text, toolIcon }) => (
