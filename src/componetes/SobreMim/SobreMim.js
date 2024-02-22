@@ -74,8 +74,17 @@ function SobreMim() {
     <SobreMimContainer>
       <TituloSobreMim>Sobre Mim</TituloSobreMim>
       <TextoPerfil>
-        Desenvolvedor Full Stack na empresa Mais Indicada, uma cachaçaria de Celso Ramos, Santa Catarina. Tenho mais de 5 anos de experiência em vendas de produtos e tecnologia, iniciei minha jornada no desenvolvimento web em 2023. Minhas principais competências são o domínio de Javascript, TypeScript, React, Styled-Components e NodeJS, que utilizo para criar aplicações web inovadoras, e a habilidade de compreender as necessidades dos clientes e traduzi-las em soluções tecnológicas eficientes. Além disso, sou capacitado em pré-vendas e vendas consultivas, tendo realizado diversos cursos e certificações na área. Meu objetivo é contribuir de maneira significativa para projetos desafiadores, unindo meu conhecimento técnico com a expertise em vendas, visando sempre alcançar resultados excepcionais. Sou um entusiasta dedicado em acompanhar as novas tecnologias do mercado, buscando aprimorar meus conhecimentos diariamente. Sou comprometido com a agilidade no desenvolvimento e me adapto facilmente a mudanças e desafios.
-      </TextoPerfil>
+        Olá! Sou Cleber Farias, um profissional apaixonado por Tecnologia da Informação, com expertise em Desenvolvimento Full Stack e SDR. Atualmente, atuo como Desenvolvedor Full Stack na Mais Indicada, uma cachaçaria em Celso Ramos, Santa Catarina.
+
+        Com mais de 5 anos de experiência em vendas de produtos e tecnologia, iniciei minha jornada no desenvolvimento web em 2023. Minhas principais competências incluem:
+
+        Domínio de JavaScript, TypeScript, React, Styled-Components e NodeJS
+        Criação de aplicações web inovadoras
+        Compreensão das necessidades dos clientes e tradução em soluções tecnológicas eficientes
+        Capacitação em pré-vendas e vendas consultivas
+        Meu objetivo é contribuir significativamente para projetos desafiadores, unindo meu conhecimento técnico com a expertise em vendas. Estou comprometido em alcançar resultados excepcionais e acompanhar as novas tecnologias do mercado. Sou ágil no desenvolvimento e me adapto facilmente a mudanças e desafios.
+
+        Estou aberto a oportunidades de projetos freelance, contratação PJ ou efetiva. Vamos nos conectar e explorar juntos novas possibilidades!      </TextoPerfil>
       <ImagensContainer>
         <Imagens href="https://www.linkedin.com/feed/" target="_blank">
           <Icone src={LinkedInIcon} />

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { StyleSheetManager } from "styled-components";
 
 const HabilidadesContainer = styled.header`
   display: flex;
@@ -19,9 +19,13 @@ const HabilidadesContainer = styled.header`
 `;
 
 const TituloHabilidade = styled.div`
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 400;
-  background-image: linear-gradient(97.54deg, rgba(0, 47, 82, 0.9) 35.49%, rgba(50, 101, 137, 0.9) 165.37%);
+  background-image: linear-gradient(
+    97.54deg,
+    rgba(0, 47, 82, 0.9) 35.49%,
+    rgba(50, 101, 137, 0.9) 165.37%
+  );
   color: #00ccff;
   font-size: 2rem;
   margin-bottom: 20px;
@@ -44,7 +48,6 @@ const ListaRepositorios = styled.ul`
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0;
-  
 `;
 
 const RepositorioItem = styled.li`
@@ -82,7 +85,11 @@ const LinhaDivisoria = styled.hr`
 `;
 
 const BotaoAcao = styled.button`
-  background-image: linear-gradient(97.54deg, rgba(0, 47, 82, 0.9) 35.49%, rgba(50, 101, 137, 0.9) 165.37%);
+  background-image: linear-gradient(
+    97.54deg,
+    rgba(0, 47, 82, 0.9) 35.49%,
+    rgba(50, 101, 137, 0.9) 165.37%
+  );
   font-size: 16px;
   border-radius: 20px;
   font-weight: 900;
@@ -104,10 +111,10 @@ function Repositorios() {
   const [mostrarMais, setMostrarMais] = useState(false);
 
   useEffect(() => {
-    fetch('https://api.github.com/users/cleberfarias/repos')
-      .then(response => response.json())
-      .then(data => setRepositorios(data))
-      .catch(error => console.error("Erro ao buscar dados:", error));
+    fetch("https://api.github.com/users/cleberfarias/repos")
+      .then((response) => response.json())
+      .then((data) => setRepositorios(data))
+      .catch((error) => console.error("Erro ao buscar dados:", error));
   }, []);
 
   const toggleMostrarMais = () => {
@@ -115,27 +122,38 @@ function Repositorios() {
   };
 
   return (
-    <HabilidadesContainer>
-      <div>
-        <TituloHabilidade>Meus Repositórios</TituloHabilidade>
-        <ListaRepositorios>
-          {repositorios.slice(0, mostrarMais ? repositorios.length : 5).map(repository => (
-            <RepositorioItem key={repository.id}>
-              <h3>{repository.name}</h3>
-              <p>{repository.description}</p>
-              <a href={repository.html_url} target="_blank" rel="noopener noreferrer">
-                Saiba Mais
-              </a>
-            </RepositorioItem>
-          ))}
-        </ListaRepositorios>
-        <LinhaDivisoria />
-        <BotaoAcao onClick={toggleMostrarMais} bgColor={mostrarMais ? "#ff6666" : "#00ccff"}>
-          {mostrarMais ? "Recolher" : "Mostrar Mais"}
-        </BotaoAcao>
-      </div>
-    </HabilidadesContainer>
-  );
+    <StyleSheetManager shouldForwardProp={(prop) => prop !== "bgcolor"}>
+      <HabilidadesContainer>
+        <div>
+          <TituloHabilidade>Meus Repositórios</TituloHabilidade>
+          <ListaRepositorios>
+            {repositorios
+              .slice(0, mostrarMais ? repositorios.length : 5)
+              .map((repository) => (
+                <RepositorioItem key={repository.id}>
+                  <h3>{repository.name}</h3>
+                  <p>{repository.description}</p>
+                  <a
+                    href={repository.html_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Saiba Mais
+                  </a>
+                </RepositorioItem>
+              ))}
+          </ListaRepositorios>
+          <LinhaDivisoria />
+          <BotaoAcao
+            onClick={toggleMostrarMais}
+            $bgcolor={mostrarMais ? "#ff6666" : "#00ccff"}
+          >
+            {mostrarMais ? "Recolher" : "Mostrar Mais"}
+          </BotaoAcao>
+        </div>
+      </HabilidadesContainer>
+    </StyleSheetManager>
+);
 }
 
 export default Repositorios;

@@ -1,4 +1,4 @@
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 import React from "react";
 import JavaScriptIcon from '../../imagens/java.svg';
 import ImagemReact from '../../imagens/logo.svg';
