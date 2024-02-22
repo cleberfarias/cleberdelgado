@@ -74,7 +74,7 @@ function SobreMim() {
     <SobreMimContainer>
       <TituloSobreMim>Sobre Mim</TituloSobreMim>
       <TextoPerfil>
-        Olá! Sou Cleber Farias, um profissional apaixonado por Tecnologia da Informação, com expertise em Desenvolvimento Full Stack e SDR. Atualmente, atuo como Desenvolvedor Full Stack na Mais Indicada, uma cachaçaria em Celso Ramos, Santa Catarina.
+        Olá! Sou Cleber Farias, um profissional apaixonado por Tecnologia da Informação, com expertise em Desenvolvimento Front end. Atualmente, atuo como Desenvolvedor Full Stack na Mais Indicada, uma cachaçaria em Celso Ramos, Santa Catarina.
 
         Com mais de 5 anos de experiência em vendas de produtos e tecnologia, iniciei minha jornada no desenvolvimento web em 2023. Minhas principais competências incluem:
 
