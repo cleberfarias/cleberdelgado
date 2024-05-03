@@ -4,6 +4,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import styled from 'styled-components';
 import EmBreve from '../../imagens/Breve.jpeg';
+import IndicadaVideo from '../../videos/indicada.mp4';
 
 const CarrosselSection = styled.section`
   padding-bottom: 20px;
@@ -89,6 +90,14 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     max-height: 100%; /* Ajusta o tamanho da imagem proporcionalmente à altura do slide */
     border-radius: 10px; /* Opcional: adicione border-radius às imagens */
   }
+  
+`
+
+const Video = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px
 `;
 
 function Cards() {
@@ -108,7 +117,9 @@ function Cards() {
           }}
         >
           <StyledSwiperSlide>
-            <img src={EmBreve} alt="Projeto A Mais Indicada" />
+          <Video controls autoPlay>
+              <source src={IndicadaVideo} type="video/mp4" />
+            </Video>
           </StyledSwiperSlide>
           <StyledSwiperSlide>
             <img src={EmBreve} alt="Em Breve" />
