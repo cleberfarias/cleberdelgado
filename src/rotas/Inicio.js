@@ -9,6 +9,7 @@ import Formulario from '../componetes/Formulário/Formulario';
 import Footer from '../componetes/Footer/Footer';
 import Header from '../componetes/Header/Header';
 import Rodape from '../componetes/Rodape/Rodape';
+import FloatingWhatsAppButton from '../componetes/whatsapp/whatsapp';
 
 const AppContainer = styled.div`
   width: 100vw;
@@ -36,6 +37,7 @@ function Inicio() {
       <Habilidade />
       <Formulario />
       <Footer/>
+      <FloatingWhatsAppButton/>
       <Rodape/>
     </AppContainer>
   )
